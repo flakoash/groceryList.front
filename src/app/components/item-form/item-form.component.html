@@ -1,0 +1,30 @@
+<div>
+    Details of Item: <br>
+    Id: {{newItem._id}} <br>
+    Name: {{newItem.name}} <br>
+    Description: {{newItem.description}} <br>
+    Creation date: {{newItem.created_at}} <br>
+</div>
+<hr>
+<div *ngIf="create">
+    CREATE ITEM
+</div>
+<div *ngIf="!create">
+    EDIT ITEM
+</div>
+
+<label>name:
+    <input [(ngModel)]="newItem.name" placeholder="name"/>
+</label>
+<label>description:
+    <input [(ngModel)]="newItem.description" placeholder="description"/>
+</label>
+
+<button (click)="onCancel()">Cancelar</button>
+<button (click)="onSave()">Guardar</button>
+<hr>
+
+<h2> upload-file </h2>
+
+<input type="file" (change)="onFileSelected($event)">
+<button (click)="onUpload()">Submit File</button>

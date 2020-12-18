@@ -1,0 +1,14 @@
+<h2>Items</h2>
+
+<app-item-form [item]=itemSelected (saved)="onSaved()"></app-item-form>
+
+
+<ul>
+  <li *ngFor="let item of items" (click)="onSelect(item)">
+    <span>{{item._id}}</span> - {{item.name}}
+  </li>
+</ul>
+
+<div class="scrolling-wrapper">
+ <app-item-card *ngFor="let item of items" (click)="onSelect(item)" [item]="item"></app-item-card>
+</div>

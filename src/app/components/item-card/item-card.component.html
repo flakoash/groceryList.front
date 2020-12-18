@@ -1,0 +1,12 @@
+<div class="card">
+    <img src="img_avatar.png" alt="Item Image" style="width:100%">
+    <div class="container">
+      <h4><b>{{item.name}}</b></h4>
+      <div *ngIf="item.productFeatures !== undefined">
+          Product Features:
+          <p *ngFor="let key of Object.keys(item.productFeatures)">
+            {{key}}: {{item.productFeatures[key]}}
+          </p>
+      </div>
+    </div>
+  </div>
